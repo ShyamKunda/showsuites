@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .center {
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+          }
+          .bold {
+            font-weight: bold;
+          }
+      </style>
+  </head>
+  
+  <body>
+    <!-- As a link -->
+
+    <div class="container-fluid justify-content-center center" id="container">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <span class="navbar-brand mb-0 h1">Turvo E2E Suites & Subsuites</span>
+        
+            </div>
+          </nav>
+          <div class="container" >
+
+            <div class="row">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for suites" title="Type in a name">
+                <ul id="allsuites" class="">
+
+                </ul>
+            </div>
+          </div>
+
+    </div>
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("allsuites");
+            tr = table.getElementsByTagName("li");
+            for (i = 0; i < tr.length; i++) {
+                txtValue = tr[i].textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+   
+            }
+          }
+    </script>
+ 
+    <script>
+        const suites = ["accountExternalIds","accounting","accountsArchiving","additionalAttributes","adminConsole","adminConsole.announcements","adminConsole.common","adminConsole.companyProfile","adminConsole.documentTemplates","adminConsole.groups","adminConsole.integrationHub","adminConsole.routingGuide","adminConsole.settings","adminConsole.settings.orders","adminConsole.users","analytics","analytics.accountPayable","analytics.accountReceivable","analytics.general","analytics.invoiceCustomer","appointmentDates","approachingLate","approachingLate.shipmentRunningLate","assets","authentication","baseflow","baseflow.carrierDetails","baseflow.contactDetails","baseflow.customerDetails","baseflow.customerInvoicing","baseflow.factorDetails","baseflow.locationDetails","baseflow.locationUpdates","baseflow.routeNumber","baseflow.routingGuide","baseflow.shipmentCarriers","baseflow.shipmentCustomers","baseflow.shipmentOther","baseflow.shipmentOverview","baseflow.userDetails","billingEmail","businessRules","cascadeTime","cascadeTime.ByAppointment","cascadeTime.FCFS","contacts","contracts","contracts.detailsTab","contracts.documentsTab","contracts.import","contracts.ltlContracts","contracts.network","contracts.rates","contracts.rating","contracts.rating.carrierSegment","contracts.rating.customerSegment","contracts.summaryTab","contracts.timeline","copyShipment","customUploadId","dashboard","dashboard.dashboardView","displayContacts","documents","drivers","eta","exception","exception.ezClaimException","exception.notifications","exception.sharing","exception.shipmentOSD","exception.workbench","favorite","favorite.shipments","filters","filters.carrier","filters.contact","filters.contracts","filters.customer","filters.dashboard","filters.factor","filters.location","filters.shipment","findCarriers","findCarriers.network","findCarriers.shipmentCarrierTab","fleet","globalRoute","globalRoute.details","globalRoute.sharing","globalRoute.summary","groups","groups.groupAssignment","i18n","inventory","inventory.details","inventory.exception","inventory.exceptionNotifications","inventory.filters","inventory.holdCodes","inventory.orderItem","inventory.search","inventory.sharing","inventory.status","inventory.summary","itemmaster","itemmaster.filters","itemmaster.units","itemsV2","jaspersoft","lineageSuite","lineageTransfer","listview","locationGroups","ltlShipment","ltlShipment.ltlShipperPortal","ltlShipment.ltlShipperPortalBooking","mcNumber","messenger","messenger.crossTenant","messenger.messengerTranslation","mode","mode.shipmentMode","moveShipment","multipleSCAC","newFeatures","notes","notifications","notifications.common","notifications.crossTasks","notifications.crossTasks.mentions","notifications.orders","notifications.shipmentRunningLateGroup","numericFormat","numericFormat.carrier","numericFormat.carrier.carrierAccount","numericFormat.customer","numericFormat.customer.customerAccount","numericFormat.shipment","numericFormat.shipment.shipmentCollection","numericFormat.shipment.shipmentDetails","numericFormat.shipment.shipmentSummary","numericFormat.shipment.timeline","offers","offers.collection","offers.offerScreen","offers.permissions","offers.postingOffer","offers.public","offers.sharing","offers.timeline","orders","orders.attributes","orders.bulkUpdate","orders.copyOrder","orders.customerOrders","orders.cutoff","orders.cutoffStatus","orders.dashboards","orders.dateRanges","orders.details","orders.documents","orders.exception","orders.exceptionNotifications","orders.fabActions","orders.filters","orders.locations","orders.messenger","orders.ordersTab","orders.postUpdate","orders.sharing","orders.shipments","orders.summary","orders.timeline","orders.units","orders.warehouseOrders","otherAccount","parentAccount","payments","payments.carrierPayments","payments.carrierPayments.advances","payments.carrierPayments.ingestedCarriers","payments.carrierPayments.methods","payments.carrierPayments.terms","payments.shipmentPayments","payments.tenantfees","permissions","permissions.analystCSR","permissions.customerServiceRep","permissions.inventoryControl","permissions.leadScheduler","permissions.officeManager","permissions.orderManagementAnalyst","permissions.seniorCSR","permissions.trafficOffice","postUpdate","postings","presence","presence.crossTenant","preventDuplicates","preventEdits","publicLink","reserveCarrier","rules","rules.customerRules","rules.exceptions","rules.orders","rules.shipments","rules.shipments.autopilotRules","rules.shipments.transitionStatus","rules.shipments.userRules","rules.tasks","savedFilters","scheduling","scheduling.adminConsole","scheduling.europeScheduling","scheduling.mainApp","scheduling.notifications","scheduling.public","scheduling.publicEuropeScheduling","scheduling.publicShipScheduling","scheduling.shipScheduling","scheduling.uploadSlots","search","search.assets","search.carrier","search.contact","search.customer","search.factor","search.location","search.shipment","search.tags","sharing","sharing.ajinomotoSharing","sharing.brokerView","sharing.carrierSharing","sharing.carrierView","sharing.customerSharing","sharing.locationSharing","sharing.logisticsProvider","sharing.memoSharing","sharing.partySharing","sharing.sharingAccount","sharing.shipperView","sharing.vendorSharing","sharing.vendorSharing.locationByAccount","shipmentDatabits","shipmentDatabits.broker","shipmentDatabits.carrier","shipmentDatabits.shipper","shipmentDials","shipmentPlanning","shipmentPlanning.autoPlanning","shipmentPlanning.manualPlanning","shipments","shipments.bulkOperations","shipments.dates","shipments.listView","shipments.secondaryId","shipments.shipmentTypes","sidebarMessenger","singleAsset","smoke","sorting","statusBar","summary","summary.carrier","summary.contact","summary.customer","summary.factor","summary.location","summary.shipment","summary.user","tags","tags.systemTags","tasks","tasks.crossTasks","thirdParty","timeline","timeline.mentions","timeline.shipmentRouteTimeline","timeline.tagsIntegration","timeline.tasksIntegration","turvoDataImporter","turvoDataImporter.download","turvoDataImporter.tdiUI","turvoDataImporter.upload","typeahead","typeahead.accounts","typeahead.analytics","typeahead.contacts","typeahead.dashboard","typeahead.filters","typeahead.messenger","typeahead.notifications","typeahead.search","typeahead.shipment","typeahead.tasks","uom","usersCreation","vinInspections"]
+        var ele = document.getElementById('allsuites');
+
+
+        
+        suites.forEach((suite, index) => {
+            if (suite.includes('.')) {
+                ele.innerHTML += `
+                <ul>
+                    <li>${suite}</li>
+                  </ul>
+                `
+            }else {
+                ele.innerHTML += `<li class="bold"> ${suite} </li>`
+            }
+        
+        })
+
+ </script>
+        
+   
+  
+  <!-- As a heading -->
+  
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    
+</body>
+</html>
